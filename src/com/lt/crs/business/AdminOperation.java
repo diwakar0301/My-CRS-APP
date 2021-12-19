@@ -55,6 +55,15 @@ public class AdminOperation implements AdminInterface {
 		admin.removeCourse();
 		
 	}
+
+	@Override
+	public void reportCardGeneration() {
+		// TODO Auto-generated method stub
+		admin=new AdminDAOImpl();
+		admin.reportCardGeneration();
+		
+		
+	}
 	
 
 }

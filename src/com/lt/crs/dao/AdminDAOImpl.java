@@ -345,4 +345,34 @@ static Scanner sc=new Scanner(System.in);
 		
 		
 	}
+
+	@Override
+	public void reportCardGeneration() {
+		// TODO Auto-generated method stub
+
+		db=new DBUtils();
+		con=db.getConnection();
+		
+		try {
+		
+			ps=con.prepareStatement("  select c.course_id,c.course_name,s.student_name,sg.mark,sg.grade,s.student_id from student_grade sg inner join student s on sg.student_id=s.student_id inner join course c on sg.course_id=c.course_id group by 1,2,3,4,5,6 order by 6 ");
+
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("******************* Displaying report card for Student ID:" +rs.getInt(6)+" and Student Name :"+rs.getString(3)+"******************  ");
+			System.out.println("\t\t course ID        "+rs.getInt(1)+"\t\t\t Course Name      "+rs.getString(2)+"\t\t\t\tMark     "+rs.getDouble(4)+"\t\tGrade       "+rs.getString(5));
+			}
+			
+		
+			
+			
+			
+		}
+		catch(Exception e) {try {e.printStackTrace();ps.close();con.close();}catch(Exception e1) {e.printStackTrace();}	}
+
+
+		
+		
+	}
 }

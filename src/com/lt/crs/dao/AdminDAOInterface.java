@@ -13,6 +13,8 @@ public interface AdminDAOInterface {
 	public void addCourse();
 
 	public void removeCourse();
+
+	public void reportCardGeneration();
 	
 	
 }

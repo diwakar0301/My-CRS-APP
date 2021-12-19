@@ -161,7 +161,7 @@ public class StudentDAOImpl implements StudentDAOInterface{
 	@Override
 	public void viewReportCard(int studentId) {
 		// TODO Auto-generated method stub
-		
+
 		db=new DBUtils();
 		con=db.getConnection();
 		

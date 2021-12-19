@@ -14,7 +14,7 @@ public class CRSAdmin {
 		Boolean adminMenu=true;
 		while(adminMenu) {
 			System.out.println("\n 1.Add Professor \n2. Remove Professor \n 3. Add Course \n4. Remove Course \n "
-					+ "5. Approve Student \n6. Reject Student \n 7. Logout");
+					+ "5. Approve Student \n6. Reject Student \n 7. Report Card Generation \n8.Logout");
 			int adminSelect=sc.nextInt();
 			switch(adminSelect) {
 			case 1:
@@ -43,6 +43,10 @@ public class CRSAdmin {
 				adSer.removeStudent();
 				break;
 			case 7:
+				adSer=new AdminOperation();
+				adSer.reportCardGeneration();
+				break;
+			case 8:
 				System.out.println(" Are you sure you want to log out Y or N: ");
 				char ask=sc.next().charAt(0);
 				if(ask=='y' || ask=='Y') {adminMenu=false;}

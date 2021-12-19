@@ -14,4 +14,6 @@ public interface AdminInterface {
 
 	public void removeCourse();
 
+	public void reportCardGeneration();
+
 }
